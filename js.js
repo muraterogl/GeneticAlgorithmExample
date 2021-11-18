@@ -8,13 +8,13 @@ const random_num = (min, max) =>
 
 const mutated_genes = () => GENES[random_num(0, GENES.length - 1)];
 
-const create_gnome = () =>
+const create_genome = () =>
     [...Array(TARGET.length)].map((_) => mutated_genes()).join("");
 
 class Individual {
     constructor(chromosome) {
         this.chromosome =
-            chromosome === undefined ? create_gnome() : chromosome;
+            chromosome === undefined ? create_genome() : chromosome;
         this.fitness = [...Array(TARGET.length)]
             .map((_, i) => (this.chromosome[i] != TARGET[i] ? 1 : 0))
             .reduce((a, b) => a + b);

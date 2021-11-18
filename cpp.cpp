@@ -19,12 +19,12 @@ char mutated_genes() {
     return GENES[r];
 }
 
-string create_gnome() {
+string create_genome() {
     int len = TARGET.size();
-    string gnome = "";
+    string genome = "";
     for(int i = 0;i<len;i++)
-        gnome += mutated_genes();
-    return gnome;
+        genome += mutated_genes();
+    return genome;
 }
 
 class Individual {
@@ -38,7 +38,7 @@ public:
 };
 
 Individual::Individual() {
-    this->chromosome = create_gnome();
+    this->chromosome = create_genome();
     fitness = cal_fitness();
 };
 

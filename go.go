@@ -23,13 +23,13 @@ func mutated_genes() byte {
 	return GENES[r]
 }
 
-func create_gnome() string {
+func create_genome() string {
 	len := len(TARGET)
-	gnome := bytes.NewBufferString("")
+	genome := bytes.NewBufferString("")
 	for i:=0; i<len; i++ {
-		gnome.WriteByte(mutated_genes())
+		genome.WriteByte(mutated_genes())
 	}
-	return gnome.String()
+	return genome.String()
 }
 
 type Individual struct {
@@ -78,7 +78,7 @@ func main() {
 	population := make([]Individual, 100)
 	found := false
 	for i:=0; i<POPULATION_SIZE; i++ {
-		population[i] = makeIndividual(create_gnome())
+		population[i] = makeIndividual(create_genome())
 	}
 
 	for !found {
