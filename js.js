@@ -23,7 +23,7 @@ class Individual {
         new Individual(
             [...Array(par2.chromosome.length)]
                 .map((_, i) => {
-                    const p = random_num(0, POPULATION_SIZE);
+                    const p = random_num(0, 100);
                     if (p < 45) return this.chromosome[i];
                     else if (p < 90) return par2.chromosome[i];
                     return mutated_genes();

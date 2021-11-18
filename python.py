@@ -19,7 +19,7 @@ class Individual:
         self.chromosome = args[0] if len(args)>0 else create_genome()
         self.fitness = sum(1 if self.chromosome[i]!=TARGET[i] else 0 for i in range(len(TARGET)))
     def mate(self, par2):
-        return Individual("".join([self.chromosome[i] if (p:=random_num(0,POPULATION_SIZE))<45 else par2.chromosome[i] if p<90 else mutated_genes() for i in range(len(par2.chromosome))]))
+        return Individual("".join([self.chromosome[i] if (p:=random_num(0,100))<45 else par2.chromosome[i] if p<90 else mutated_genes() for i in range(len(par2.chromosome))]))
     
 start = time.perf_counter()
 generation = 0
