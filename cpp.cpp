@@ -107,7 +107,7 @@ int main()
             new_generation[i]=population[i];
         
         for(int i=s; i<POPULATION_SIZE; i++){
-            new_generation[i] = population[random_num(0, 50)].mate(population[random_num(0, 50)]);
+            new_generation[i] = population[random_num(0, POPULATION_SIZE/2)].mate(population[random_num(0, POPULATION_SIZE/2)]);
         }
         for(int i = 0;i<POPULATION_SIZE;i++) {   
             population[i]=new_generation[i];
